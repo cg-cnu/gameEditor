@@ -11,12 +11,12 @@ bl_info = {
 
 if "bpy" in locals():
 	import imp
-	imp.reload(ObjMultiExport)
-	imp.reload(AssetPropertiesExporter)
+	imp.reload(objMultiExporter)
+	imp.reload(assetPropertiesExporter)
 	imp.reload(massCalculator)
 else:
-	from . import AssetPropertiesExporter
-	from . import ObjMultiExporter
+	from . import assetPropertiesExporter
+	from . import objMultiExporter
 	from . import massCalculator
 
 
@@ -93,8 +93,8 @@ class GameEditor(bpy.types.Panel):
 					row.prop(object, "MyMass", text = "")
 					
 def menu_func_export(self, context):
-	self.layout.operator(ObjMultiExport.bl_idname, text= "Obj multi Exporter")
-	self.layout.operator(AssetPropertyExporter.bl_idname, text="Asset Properties Exporter")	
+	self.layout.operator(objMultiExporter.bl_idname, text= "Obj multi Exporter")
+	self.layout.operator(assetPropertyExporter.bl_idname, text="Asset Properties Exporter")	
 		
 def register():
 	bpy.utils.register_module(__name__)
