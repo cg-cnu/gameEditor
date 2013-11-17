@@ -63,10 +63,6 @@ class GameEditor(bpy.types.Panel):
 		layout.prop(rd, "filepath", text="")
 		layout.operator("export.multi_obj")
 		layout.operator("export.asset_properties")
-		#layout.operator("boundingBoxCreator")
-
-		#layout.separator()
-		#layout.operator("RIGIDBODY_OT_mass_calculate")
 
 		row = layout.row(align=True)        
 		row.label(text="Asset")
